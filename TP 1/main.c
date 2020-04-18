@@ -167,6 +167,7 @@ int main()
                 system("pause");
                 contOp1 = 0;
                 contOp2 = 0;
+                contCalculo = 0;
             }
             else
             {
