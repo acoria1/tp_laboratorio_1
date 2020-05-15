@@ -1,0 +1,10 @@
+#ifndef FUNCIONESADICIONALES_H_INCLUDED
+#define FUNCIONESADICIONALES_H_INCLUDED
+
+
+
+#endif // FUNCIONESADICIONALES_H_INCLUDED
+
+
+int menu();
+void normalizeString (char a[]);

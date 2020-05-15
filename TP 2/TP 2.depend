@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1589572949 source:c:\users\agusi\desktop\utn\programacion\c\tp's\tp 2\ac_getfunciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+
+1589573077 source:c:\users\agusi\desktop\utn\programacion\c\tp's\tp 2\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"empleado.h"
+	"ac_getFunciones.h"
+
+1589571311 source:c:\users\agusi\desktop\utn\programacion\c\tp's\tp 2\funcionesadicionales.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"funcionesAdicionales.h"
+
+1589499304 source:c:\users\agusi\desktop\utn\programacion\c\tp's\tp 2\sector.c
+	<stdio.h>
+	<stdlib.h>
+
+1589572296 source:c:\users\agusi\desktop\utn\programacion\c\tp's\tp 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ac_getFunciones.h"
+	"sector.h"
+	"empleado.h"
+	"funcionesAdicionales.h"
+
+1589481784 c:\users\agusi\desktop\utn\programacion\c\tp's\tp 2\tp2_datastorage.h
+
+1589507224 c:\users\agusi\desktop\utn\programacion\c\tp's\tp 2\sector.h
+
+1589573305 c:\users\agusi\desktop\utn\programacion\c\tp's\tp 2\empleado.h
+	"sector.h"
+
+1589507634 c:\users\agusi\desktop\utn\programacion\c\tp's\tp 2\funcionesadicionales.h
+
+1589571419 c:\users\agusi\desktop\utn\programacion\c\tp's\tp 2\ac_getfunciones.h
+
