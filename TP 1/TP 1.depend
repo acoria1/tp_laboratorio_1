@@ -7,19 +7,16 @@
 	<stdio.h>
 	<stdlib.h>
 
-1586014683 source:c:\users\agusi\desktop\utn\programacion\c\tp's\tp 1\tp1_func.c
-	<stdio.h>
-	<stdlib.h>
-
-1587167136 source:c:\users\agusi\desktop\utn\programacion\c\tp's\tp 1\main.c
-	<stdio.h>
-	<stdlib.h>
-	<ctype.h>
-
-1587177633 source:c:\users\agusi\desktop\tp_laboratorio_1\tp 1\tp1_func.c
+1587177633 source:c:\users\agusi\desktop\utn\programacion\c\tp's\tp 1\tp1_func.c
 	<stdio.h>
 	<stdlib.h>
 	"tp1_func.h"
 
-1587177633 c:\users\agusi\desktop\tp_laboratorio_1\tp 1\tp1_func.h
+1599480680 source:c:\users\agusi\desktop\utn\programacion\c\tp's\tp 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"tp1_func.h"
+
+1587177633 c:\users\agusi\desktop\utn\programacion\c\tp's\tp 1\tp1_func.h
 

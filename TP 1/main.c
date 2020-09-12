@@ -25,8 +25,17 @@ int main()
     do
     {
         printf("***CALCULADORA BASICA*** \n\n");
-        printf("a- Ingresar 1er operando \n");
-        printf("b- Ingresar 2do operando \n");
+        if (contOp1 == 0){
+        printf("a- Ingresar 1er operando A = x\n");
+        } else {
+        printf("a- Ingresar 1er operando A = %d\n",num1);
+        }
+        if (contOp2 == 0){
+        printf("b- Ingresar 2do operando B = y\n");
+        } else {
+        printf("b- Ingresar 2do operando B = %d\n",num2);
+        }
+
         printf("c- Calcular todas las operaciones \n");
         printf("d- Ver resultados \n");
         printf("e- Salir \n");
@@ -163,11 +172,7 @@ int main()
                 {
                     printf("El factorial de %d es: %lli \n",num2,factorialNum2);
                 }
-                printf("\nIMPORTANTE: los valores de los operandos seran borrados al continuar con la ejecucion\n\n");
                 system("pause");
-                contOp1 = 0;
-                contOp2 = 0;
-                contCalculo = 0;
             }
             else
             {
