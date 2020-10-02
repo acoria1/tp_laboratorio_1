@@ -3,6 +3,8 @@
 #include <ctype.h>
 #include <string.h>
 
+#include "ac_getFunciones.h"
+
 
 int ac_getInt(int *num,int minimo,int maximo,char mensaje[],int tries)
 {

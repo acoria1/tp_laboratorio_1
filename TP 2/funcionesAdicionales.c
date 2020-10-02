@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "funcionesAdicionales.h"
+#include "ac_getFunciones.h"
 
 int menu()
 {

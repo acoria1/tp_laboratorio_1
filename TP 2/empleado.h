@@ -131,3 +131,5 @@ void eliminarEmpleado (e_Empleado vec[],int size,e_Sector sectores[],int sizeSec
  *         -1 si no hay empleados cargados en el vector
  */
 int hayEmpleados (e_Empleado vec[],int size);
+
+

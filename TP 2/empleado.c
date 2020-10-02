@@ -5,6 +5,7 @@
 
 #include "empleado.h"
 #include "ac_getFunciones.h"
+#include "funcionesAdicionales.h"
 
 void inicializarEmpleados (e_Empleado list[],int size)
 {
@@ -42,23 +43,23 @@ int getEmpleado (e_Empleado x[],int size,int idOrigen,e_Sector sectores[],int si
         x[i].id = idOrigen;
         do
         {
-            if (ac_getString(x[i].nombre,51,5,"Ingrese nombre de empleado: ") == -1)
+            if (ac_getString(x[i].nombre,51,5,"\nIngrese nombre de empleado: ") == -1)
             {
                 break;
             }
-            if (ac_getString(x[i].apellido,51,5,"Ingrese apellido de empleado: ") == -1)
+            if (ac_getString(x[i].apellido,51,5,"\nIngrese apellido de empleado: ") == -1)
             {
                 break;
             }
             normalizeString( x[i].apellido);
             normalizeString( x[i].nombre);
 
-            if (ac_getFloat(&x[i].sueldo,1000,10000000,"Ingrese sueldo del empleado: ($1.000 - $10.000.000)",3) == -1)
+            if (ac_getFloat(&x[i].sueldo,1000,10000000,"\nIngrese sueldo del empleado: ($1.000 - $10.000.000)",3) == -1)
             {
                 break;
             }
 
-            printf("Ingrese sector del empleado (1-%d)\n",sizeSect);
+            printf("\nIngrese sector del empleado (1-%d)\n",sizeSect);
             for (int j = 0; j<sizeSect; j++)
             {
                 printf("%d-%s\n",j+1,sectores[j].descripcion);
@@ -68,7 +69,7 @@ int getEmpleado (e_Empleado x[],int size,int idOrigen,e_Sector sectores[],int si
                 break;
             }
             x[i].isFull = 1;
-            printf("\nAlta de empleado realizada con exito. ID del empleado: %d \n",x[i].id);
+            printf("\nAlta de empleado realizada con exito. ID del empleado: %d \n\n",x[i].id);
             todoBien = 1;
             system("pause");
         }
@@ -76,7 +77,7 @@ int getEmpleado (e_Empleado x[],int size,int idOrigen,e_Sector sectores[],int si
     }
     else
     {
-        printf("No hay lugar disponible.\n");
+        printf("\nNo hay lugar disponible.\n");
         system("pause");
     }
     return todoBien;
@@ -134,11 +135,11 @@ void modificarEmpleado (e_Empleado vec[],int size,e_Sector sectores[],int sizeSe
     int opcion;
     system("cls");
     printf("****MODIFICACION DE EMPLEADO****\n");
-    ac_getInt(&aux,0,9999,"Ingrese ID del empleado a modificar (xxxx)",5);
+    ac_getInt(&aux,0,9999,"\nIngrese ID del empleado a modificar (xxxx)",5);
     indiceEmpBaja = buscarEmpleado(aux,vec,size);
     if ( indiceEmpBaja == -1)
     {
-        printf("El empleado que desea modificar no existe.\n");
+        printf("\nEl empleado que desea modificar no existe.\n");
         system("pause");
     }
     else
@@ -155,7 +156,7 @@ void modificarEmpleado (e_Empleado vec[],int size,e_Sector sectores[],int sizeSe
             printf("4-Sector\n");
             printf("5-Volver a menu principal\n");
 
-            if (ac_getInt(&opcion,1,5,"Opcion: ",3)==-1)
+            if (ac_getInt(&opcion,1,5,"\nOpcion: ",3)==-1)
             {
                 break;
             }
@@ -163,31 +164,31 @@ void modificarEmpleado (e_Empleado vec[],int size,e_Sector sectores[],int sizeSe
             switch (opcion)
             {
             case 1:
-                if (ac_getString(vec[indiceEmpBaja].nombre,20,3,"Ingrese nuevo nombre del empleado: ") == -1)
+                if (ac_getString(vec[indiceEmpBaja].nombre,20,3,"\nIngrese nuevo nombre del empleado: ") == -1)
                 {
                     break;
                 }
                 normalizeString(vec[indiceEmpBaja].nombre);
-                printf("\nModificacion realizada con exito\n");
+                printf("\nModificacion realizada con exito\n\n");
                 break;
             case 2:
-                if (ac_getString(vec[indiceEmpBaja].apellido,20,3,"Ingrese nuevo apellido del empleado: ") == -1)
+                if (ac_getString(vec[indiceEmpBaja].apellido,20,3,"\nIngrese nuevo apellido del empleado: ") == -1)
                 {
                     break;
                 }
                 normalizeString(vec[indiceEmpBaja].apellido);
-                printf("\nModificacion realizada con exito\n");
+                printf("\nModificacion realizada con exito\n\n");
                 break;
             case 3:
-                if (ac_getFloat(&vec[indiceEmpBaja].sueldo,1000,10000000,"Ingrese nuevo sueldo del empleado: ",3)==-1)
+                if (ac_getFloat(&vec[indiceEmpBaja].sueldo,1000,10000000,"\nIngrese nuevo sueldo del empleado: ",3)==-1)
                 {
                     break;
                 }
-                printf("\nModificacion realizada con exito\n");
+                printf("\nModificacion realizada con exito\n\n");
                 break;
 
             case 4:
-                printf("Ingrese nuevo sector del empleado (1-%d)\n",sizeSect);
+                printf("\nIngrese nuevo sector del empleado (1-%d)\n",sizeSect);
                 for (int j = 0; j<sizeSect; j++)
                 {
                     printf("%d-%s\n",j+1,sectores[j].descripcion);
@@ -196,10 +197,12 @@ void modificarEmpleado (e_Empleado vec[],int size,e_Sector sectores[],int sizeSe
                 {
                     break;
                 }
-                printf("\nModificacion realizada con exito\n");
+                printf("\nModificacion realizada con exito\n\n");
                 break;
             }
+            if (opcion != 5){
             system("pause");
+            }
         }
         while (opcion != 5);
     }
@@ -217,7 +220,7 @@ void eliminarEmpleado (e_Empleado vec[],int size,e_Sector sectores[],int sizeSec
     indiceEmpBaja = buscarEmpleado(aux,vec,size);
     if ( indiceEmpBaja == -1)
     {
-        printf("El empleado que desea dar de baja no existe.\n");
+        printf("\nEl empleado que desea dar de baja no existe.\n");
         system("pause");
     }
     else
@@ -231,12 +234,12 @@ void eliminarEmpleado (e_Empleado vec[],int size,e_Sector sectores[],int sizeSec
         if (confirmar == 'y')
         {
             vec[indiceEmpBaja].isFull = 0;
-            printf("\nBaja de empleado realizada con exito. \n");
+            printf("\nBaja de empleado realizada con exito. \n\n");
             system("pause");
         }
         else
         {
-            printf("\nBaja cancelada\n");
+            printf("\nBaja cancelada\n\n");
             system("pause");
         }
     }
@@ -296,10 +299,10 @@ void informarSueldos (e_Empleado vec[],int size)
             contador++;
         }
     }
-    printf("***SALARIOS***");
+    printf("***SALARIOS***\n");
     printf("\nTotal de salarios de la empresa: $ %.2f\n",total);
     printf("\nSalario promedio: $ %10.2f\n",promedio);
-    printf("\nCantidad de empleados cuyo salario es mayor al promedio: %d\n",contador);
+    printf("\nCantidad de empleados cuyo salario es mayor al promedio: %d\n\n\n",contador);
     system("pause");
 }
 
@@ -308,6 +311,7 @@ int a = -1;
 for (int i = 0;i<size;i++){
     if (vec[i].isFull == 1){
     a = 1;
+    break;
     }
 }
 return a;
