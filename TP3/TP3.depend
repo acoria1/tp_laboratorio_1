@@ -270,3 +270,64 @@
 
 1604457601 c:\users\agusi\desktop\utn\programacion\c\tp's\tp3\tp3\menus.h
 
+1603957316 source:c:\users\agusi\desktop\tp_laboratorio_1\tp3\ac_getfunciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ac_getFunciones.h"
+
+1604281595 c:\users\agusi\desktop\tp_laboratorio_1\tp3\ac_getfunciones.h
+
+1604441606 source:c:\users\agusi\desktop\tp_laboratorio_1\tp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"ac_getFunciones.h"
+	"menus.h"
+
+1604440769 c:\users\agusi\desktop\tp_laboratorio_1\tp3\linkedlist.h
+
+1604443171 c:\users\agusi\desktop\tp_laboratorio_1\tp3\employee.h
+	"LinkedList.h"
+
+1604458072 c:\users\agusi\desktop\tp_laboratorio_1\tp3\parser.h
+
+1604457601 c:\users\agusi\desktop\tp_laboratorio_1\tp3\menus.h
+
+1604426309 source:c:\users\agusi\desktop\tp_laboratorio_1\tp3\employee.c
+	<stdlib.h>
+	<stdio.h>
+	"Employee.h"
+	<string.h>
+	"LinkedList.h"
+	"ac_getFunciones.h"
+
+1604458002 source:c:\users\agusi\desktop\tp_laboratorio_1\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"menus.h"
+	"ac_getFunciones.h"
+
+1604457241 c:\users\agusi\desktop\tp_laboratorio_1\tp3\controller.h
+
+1604441606 source:c:\users\agusi\desktop\tp_laboratorio_1\tp3\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"ac_getFunciones.h"
+	<string.h>
+	"menus.h"
+
+1604425889 source:c:\users\agusi\desktop\tp_laboratorio_1\tp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
