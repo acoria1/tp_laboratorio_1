@@ -31,9 +31,9 @@ int main()
 
     int opcion;
     int control = 0;
-    int control2 = 0;
+    int salir = 0;
     int ID = 0;
-    char confirmar = 'n';
+    char confirmar = 'y';
 
     do
     {
@@ -45,6 +45,7 @@ int main()
             if (control == 0)
             {
                 control += controller_loadFromText("data.csv",myList,&ID);
+                salir = 1;
             }
             else
             {
@@ -55,6 +56,7 @@ int main()
             if (control == 0)
             {
                 control += controller_loadFromBinary("data.bin",myList,&ID);
+                salir = 1;
             }
             else
             {
@@ -62,13 +64,19 @@ int main()
             }
             break;
         case 3:
-            control += controller_addEmployee(myList,&ID);
+            if (controller_addEmployee(myList,&ID)==1){
+                salir = 1;
+            }
             break;
         case 4:
-            controller_editEmployee(myList);
+            if (control +=controller_editEmployee(myList)==1){
+            salir = 1;
+            }
             break;
         case 5:
-            controller_removeEmployee(myList);
+            if (control+=controller_removeEmployee(myList)==1){
+            salir = 1;
+            }
             break;
         case 6:
             controller_ListEmployee(myList);
@@ -78,12 +86,12 @@ int main()
             break;
         case 8:
             if (controller_saveAsText("data.csv",myList)==1){
-            control2 = 1;
+            salir = 0;
             }
             break;
         case 9:
             if (controller_saveAsBinary("data.bin",myList)==1){
-            control2 = 1;
+            salir = 0;
             }
             break;
         }
@@ -91,14 +99,7 @@ int main()
         {
             system("pause");
         }
-        else if (control2 == 0 && control > 0)
-        {
-            ac_getChar(&confirmar,"\nAun no se han guardado los cambios efectuados. \nSeguro que desea salir? (y/n): ",'y','Y','n','N','N',1);
-            if (confirmar == 'n' || confirmar == 'N')
-            {
-                opcion = 0;
-            }
-        }
+
         system("cls");
     }
     while (opcion != 10 && opcion != 0);

@@ -337,32 +337,39 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee,int* ID)
     int id,horas,salario;
     char nombre[50];
     int len = ll_len(pArrayListEmployee);
+    int status = 0;
 
     pVec = fopen(path,"w");
     pArchivoID = fopen("ultimoID.csv","w");
-
+    printf("1");
     if (pVec != NULL && pArchivoID != NULL)
     {
+         printf("2");
         fprintf(pVec,"ID,Nombre,HorasTrabajadas,Sueldo\n");
         for (int i = 0; i< len; i++)
         {
             pEmp = ll_get(pArrayListEmployee,i);
             employee_GetEverything(pEmp,&id,&horas,&salario,nombre);
+            printf("3");
             if (i != len-1)
             {
                 fprintf(pVec,"%d,%s,%d,%d\n",id,nombre,horas,salario);
+                printf("4");
             }
             else
             {
                 fprintf(pVec,"%d,%s,%d,%d",id,nombre,horas,salario);
+                printf("5");
             }
         }
+        printf("ID: %d",*ID);
         fprintf(pArchivoID,"%d",*ID);
         printf("\nEmpleados guardados con exito en %s\n\n",path);
+        status = 1;
     }
     fclose(pVec);
     fclose(pArchivoID);
-    return 1;
+    return status;
 }
 
 
@@ -371,6 +378,7 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee,int *ID)
     FILE* pVec;
     FILE* pArchivoID;
     Employee* pEmp;
+    int status = 0;
 
     int len = ll_len(pArrayListEmployee);
     pVec = fopen(path,"wb");
@@ -384,13 +392,15 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee,int *ID)
             fwrite(pEmp,sizeof(Employee),1,pVec);
 
         }
+        printf("ID: %d",*ID);
         fprintf(pArchivoID,"%d",*ID);
         printf("\nEmpleados guardados con exito en %s\n\n",path);
+        status = 1;
 
     }
     fclose(pVec);
     fclose(pArchivoID);
-    return 1;
+    return status;
 }
 
 
